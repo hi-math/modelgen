@@ -8,7 +8,25 @@ st.title("숫자가 아닌 데이터를 처리합니다.")
 
 st.write("수치데이터가 아닌 것은 처리할 수 없습니다. 그림과 같은 방법으로 처리합니다.")
 
-st.image("..\\img\\Get_Dummies.png")
+import os
+import streamlit as st
+
+# 현재 파일의 디렉토리 경로를 얻습니다.
+current_dir = os.path.dirname(__file__)
+
+# 상위 디렉토리의 상대 경로를 생성합니다.
+parent_dir = os.path.join(current_dir, '..')
+
+# 상위 디렉토리의 'img' 폴더에 있는 이미지 파일의 경로를 생성합니다.
+image_path = os.path.join(parent_dir, 'img', 'Get_Dummies.png')
+
+# 이미지 파일의 절대 경로를 얻습니다.
+image_path_absolute = os.path.abspath(image_path)
+
+if not os.path.exists(image_path_absolute):
+    st.error(f"File not found: {image_path_absolute}")
+else:
+    st.image(image_path_absolute)
 
 if 'data' not in st.session_state:
     st.session_state['data'] = pd.DataFrame()
