@@ -61,8 +61,8 @@ if 'data' in st.session_state:
     
     if nn_column:
         if st.button("변환하기"):
-            data = pd.get_dummies(data, columns=[nn_column], drop_first=True)
-            data_test = pd.get_dummies(data_test, columns=[nn_column], drop_first=True)
+            data = pd.get_dummies(data, columns=[nn_column], drop_first=True, dtype=int)
+            data_test = pd.get_dummies(data_test, columns=[nn_column], drop_first=True, dtype=int)
             st.success('완료되었습니다!', icon="✅")
             st.session_state['data']=data.copy()
             st.session_state['data_test']=data_test.copy()
