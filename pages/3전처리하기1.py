@@ -8,7 +8,7 @@ st.title("숫자가 아닌 데이터를 처리합니다.")
 
 st.write("수치데이터가 아닌 것은 처리할 수 없습니다. 그림과 같은 방법으로 처리합니다.")
 
-st.image(".\\img\\Get_Dummies.png")
+st.image(".\img\Get_Dummies.png")
 
 if 'data' not in st.session_state:
     st.session_state['data'] = pd.DataFrame()
