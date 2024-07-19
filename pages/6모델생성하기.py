@@ -35,8 +35,7 @@ target = st.session_state['target'].copy()
 missing_cols = set(train.columns) - set(data_test.columns)
 for col in missing_cols:
     data_test[col] = 0
-st.write(train.columns)
-st.write(data_test.columns)
+
 
 def reload():
     progress_text = "잠시후에 데이터가 변환됩니다. 잠시만 기다리세요."
@@ -79,7 +78,7 @@ if 'data' in st.session_state:
             st.download_button(
     label="Download",
     data=csv,
-    file_name=f"decisiontree_{st.session_state['name']}.csv",
+    file_name="decisiontree.csv",
     mime="text/csv",
 )
 
@@ -102,7 +101,7 @@ if 'data' in st.session_state:
             st.download_button(
     label="Download",
     data=csv,
-    file_name=f"kneighbors_{st.session_state['name']}.csv",
+    file_name="kneighbors.csv",
             )
 
     with col3:
@@ -121,5 +120,5 @@ if 'data' in st.session_state:
             st.download_button(
     label="Download",
     data=csv,
-    file_name=f"SVM_{st.session_state['name']}.csv",
+    file_name="SVM.csv",
             )
