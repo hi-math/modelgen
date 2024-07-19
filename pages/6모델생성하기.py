@@ -36,6 +36,7 @@ missing_cols = set(train.columns) - set(data_test.columns)
 for col in missing_cols:
     data_test[col] = 0
 
+data_test = data_test[train.columns]
 
 def reload():
     progress_text = "잠시후에 데이터가 변환됩니다. 잠시만 기다리세요."
