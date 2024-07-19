@@ -74,7 +74,7 @@ if 'data' in st.session_state:
             st.download_button(
     label="Download",
     data=csv,
-    file_name="decisiontree.csv",
+    file_name=f"decisiontree_{st.session_state['name']}.csv",
     mime="text/csv",
 )
 
@@ -97,7 +97,7 @@ if 'data' in st.session_state:
             st.download_button(
     label="Download",
     data=csv,
-    file_name="kneighbors.csv",
+    file_name=f"kneighbors_{st.session_state['name']}.csv",
             )
 
     with col3:
@@ -116,5 +116,5 @@ if 'data' in st.session_state:
             st.download_button(
     label="Download",
     data=csv,
-    file_name="SVM.csv",
+    file_name=f"SVM_{st.session_state['name']}.csv",
             )
