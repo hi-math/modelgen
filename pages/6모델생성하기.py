@@ -32,7 +32,10 @@ data_test = st.session_state['data_test'].copy()
 train = st.session_state['train'].copy()
 target = st.session_state['target'].copy()
     
-    
+missing_cols = set(train.columns) - set(test.columns)
+for col in missing_cols:
+    test[col] = 0
+
 def reload():
     progress_text = "잠시후에 데이터가 변환됩니다. 잠시만 기다리세요."
     my_bar = st.progress(0, text=progress_text)
